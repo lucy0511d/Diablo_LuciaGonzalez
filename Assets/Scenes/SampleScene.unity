@@ -4013,6 +4013,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 884ccd7d3ae46c64b887141cf1a5433a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursorInteraccion: {fileID: 2800000, guid: 42ec8a0e710138343a271d732299cfb6, type: 3}
+  cursorPorDefecto: {fileID: 2800000, guid: 51cb6ee928f89b64691ef4dfd57c03e9, type: 3}
 --- !u!33 &2011731778
 MeshFilter:
   m_ObjectHideFlags: 0
