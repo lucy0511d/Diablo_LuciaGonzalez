@@ -29,8 +29,10 @@ public class Player : MonoBehaviour
             //Comprobar si he llegado al NPC
             if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
             {
-                Debug.Log("Hola!");
+                npcActual.Interactuar(transform);
                 npcActual = null;
+                agent.isStopped = true;
+                agent.stoppingDistance = 0;
             }
         }
         
