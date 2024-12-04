@@ -1822,6 +1822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff06fa0f734628147a46fe4bb1db9b56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tiempoRotacion: 2
   cursorInteraccion: {fileID: 2800000, guid: f8d327f88e3408f42b3dc6850224b676, type: 3}
   cursorPorDefecto: {fileID: 2800000, guid: 51cb6ee928f89b64691ef4dfd57c03e9, type: 3}
 --- !u!23 &716074651
