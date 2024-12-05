@@ -33,7 +33,7 @@ public class SistemaDeDialogos : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void IniciarDialogo()
+    public void IniciarDialogo(DialogoSO dialogo)
     {
         marcos.SetActive(true);
     }

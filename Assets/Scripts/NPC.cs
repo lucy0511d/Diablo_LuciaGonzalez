@@ -17,7 +17,7 @@ public class NPC : MonoBehaviour
     }
     public void Interactuar (Transform interactuador)
     {
-        transform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y).OnComplete(()=> SistemaDeDialogos.sistema.IniciarDialogo()); //OnComplete -> pones dentro lo que quieres hacer
+        transform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y).OnComplete(()=> SistemaDeDialogos.sistema.IniciarDialogo(dialogo)); //OnComplete -> pones dentro lo que quieres hacer
 
         
     }
