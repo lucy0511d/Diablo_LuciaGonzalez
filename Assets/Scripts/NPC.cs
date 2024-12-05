@@ -6,6 +6,7 @@ using UnityEngine;
 public class NPC : MonoBehaviour
 {
     private Outline outline;
+    [SerializeField] private DialogoSO dialogo;
     [SerializeField] private float tiempoRotacion;
     [SerializeField] private Texture2D cursorInteraccion;
     [SerializeField] private Texture2D cursorPorDefecto;
@@ -16,8 +17,9 @@ public class NPC : MonoBehaviour
     }
     public void Interactuar (Transform interactuador)
     {
-        Debug.Log("Hola!");
-        transform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y);
+        transform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y).OnComplete(()=> SistemaDeDialogos.sistema.IniciarDialogo()); //OnComplete -> pones dentro lo que quieres hacer
+
+        
     }
 
     private void OnMouseEnter()
