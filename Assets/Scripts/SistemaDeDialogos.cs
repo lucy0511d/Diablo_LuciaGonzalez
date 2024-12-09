@@ -19,6 +19,8 @@ public class SistemaDeDialogos : MonoBehaviour
 
     private DialogoSO dialogoActual; // Para almacenar con qué dialogo estamos trabajando
 
+   
+
     private void Awake()
     {
         // si el trono esta vacio...
@@ -45,22 +47,54 @@ public class SistemaDeDialogos : MonoBehaviour
     //Que el texto aparezca letra por letra
     private IEnumerator EscribirFrase()
     {
+        escribiendo = true;
+        textoDialogo.text = "";
         //"Hola aventurero te esperan grandes aventuras"
         char[] fraseEnLetras= dialogoActual.frases[indiceFraseActual].ToCharArray();
         foreach (char letra in fraseEnLetras)
         {
             textoDialogo.text += letra;
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(dialogoActual.tiempoentreletras);
 
         }
+        escribiendo = false;
     }
-    private void SiguienteFrase()
+    public void SiguienteFrase()
     {
-
+        Debug.Log("Pasamos a la siguiete frase");
+        if (escribiendo) //Si estamos escribiendo una frase...
+        {
+            CompletarFrase();
+        }
+        else
+        {
+            indiceFraseActual++;//Avanzo de indice de frase...
+            //y si aun me quedan frases..
+            if (indiceFraseActual <dialogoActual.frases.Length)
+            {
+                StartCoroutine(EscribirFrase());// La escribo..
+            }
+            else
+            {
+                TerminarDialogo();//Si no  me quedan frases, termino y cierro dialogo
+            }
+            
+        }
+    }
+    private void CompletarFrase()
+    {
+       StopAllCoroutines();
+        //Pongo la frase de golpe.
+        textoDialogo.text = dialogoActual.frases[indiceFraseActual];
+        escribiendo = false;
     }
     private void TerminarDialogo()
     {
-
+        marcos.SetActive(false);
+        StopAllCoroutines();
+        indiceFraseActual = 0; //Para posteriores dialogos.
+        escribiendo = false;
+        dialogoActual = null; // Ya no tenemos ningun dialogo 
     }
     
 }
