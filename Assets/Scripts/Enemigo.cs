@@ -31,6 +31,7 @@ public class Enemigo : MonoBehaviour
    private IEnumerator PatrullarYEsperar()
    {
         agent.SetDestination(destinoActual);
+        yield return null;
 
    }
     private void CalcularDestino()
