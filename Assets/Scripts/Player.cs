@@ -35,9 +35,9 @@ public class Player : MonoBehaviour
             //Comprobar si he llegado al NPC
             if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
             {
-                transform.DOLookAt(npc.transform.position, tiempoRotacion, AxisConstraint.Y).OnComplete( () => LanzarInteraccion(npc)); // Para que el player mire al NPC mientras habla
-                
-                
+                //transform.DOLookAt(npc.transform.position, tiempoRotacion, AxisConstraint.Y).OnComplete( () => LanzarInteraccion(npc));  // Para que el player mire al NPC mientras habla
+                LanzarInteraccion(npc);
+
             }
         }
         else if (ultimoClick)
