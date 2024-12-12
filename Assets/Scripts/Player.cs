@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine.AI;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float distanciaInteraccion;
+    [SerializeField] private float tiempoRotacion;
 
     private NavMeshAgent agent;
     private Camera cam;
@@ -33,8 +35,8 @@ public class Player : MonoBehaviour
             //Comprobar si he llegado al NPC
             if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
             {
-                npc.Interactuar(transform);
-                ultimoClick = null;
+                transform.DOLookAt(npc.transform.position, tiempoRotacion, AxisConstraint.Y).OnComplete( () => LanzarInteraccion(npc)); // Para que el player mire al NPC mientras habla
+                
                 
             }
         }
@@ -43,6 +45,11 @@ public class Player : MonoBehaviour
             agent.stoppingDistance = 0f;
         }
         
+    }
+    private void LanzarInteraccion(NPC npc)
+    {
+        npc.Interactuar(transform);
+        ultimoClick = null;
     }
 
     private void Movimiento()

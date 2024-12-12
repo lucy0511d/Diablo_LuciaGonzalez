@@ -13,6 +13,7 @@ public class SistemaDeDialogos : MonoBehaviour
     public static SistemaDeDialogos sistema;
     [SerializeField] private GameObject marcos;
     [SerializeField] private TMP_Text textoDialogo;
+    [SerializeField] private Transform npcCamera;
 
     private bool escribiendo; //Determina si el sistema está escribiendo o no.
     private int indiceFraseActual; //Marca la frase por la que voy.
@@ -37,8 +38,9 @@ public class SistemaDeDialogos : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void IniciarDialogo(DialogoSO dialogo)
+    public void IniciarDialogo(DialogoSO dialogo, Transform cameraPoint)
     {
+        npcCamera.SetPositionAndRotation(cameraPoint.position, cameraPoint.rotation); // Para cambiarle a la camera la posicion y rotacion sin necesidad de dos lineas de codigo
         Time.timeScale = 0f; //Pausamos el juegaso.
         //El dialgo actual con el que trabajamos es el que me dan por parámetro de entrada.
         dialogoActual = dialogo;
