@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering;
 
 public class SistemaPatrulla : MonoBehaviour
 {
@@ -52,5 +53,9 @@ public class SistemaPatrulla : MonoBehaviour
             indiceRutaActual = 0;
         }
         destinoActual = listadoPuntos[indiceRutaActual];
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        //!. Mirar a ver si lo que entra en mi triogger es el player  si es asi parar todas las corrutinas. desactivar este script. activar script combate
     }
 }
