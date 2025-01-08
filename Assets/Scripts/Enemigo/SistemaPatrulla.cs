@@ -29,6 +29,8 @@ public class SistemaPatrulla : MonoBehaviour
     }
     void Start()
     {
+        //Comunico al main que el sistema de patrulla soy yo.
+        main.Patrulla = this;
         StartCoroutine(PatrullarYEsperar());
     }
 
@@ -58,5 +60,12 @@ public class SistemaPatrulla : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //!. Mirar a ver si lo que entra en mi triogger es el player  si es asi parar todas las corrutinas. desactivar este script. activar script combate
+        if (other.CompareTag("Player")) //Si lo que se ha metido en el trigger es el gameobject con el tag "Player"
+        {
+            
+            StopAllCoroutines();//Paro Corrutinas
+            main.ActivaCombate();
+            this.enabled = false;//Deshabilito patrulla
+        }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,4 +11,9 @@ public class Enemigo : MonoBehaviour
 
     public SistemaCombate Combate { get => combate; set => combate = value; }
     public SistemaPatrulla Patrulla { get => patrulla; set => patrulla = value; }
+
+    public void ActivaCombate()
+    {
+        Debug.Log("Combate activado!");
+    }
 }
