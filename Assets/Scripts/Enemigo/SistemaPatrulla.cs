@@ -6,6 +6,7 @@ using UnityEngine.Rendering;
 
 public class SistemaPatrulla : MonoBehaviour
 {
+    [SerializeField] private Enemigo main;
     [SerializeField] private Transform ruta;
     [SerializeField] private NavMeshAgent agent;
     
