@@ -1606,11 +1606,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 584452241}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86a34d25cb30d024ebee878f039c0963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 1145612676}
   ruta: {fileID: 904139129}
   agent: {fileID: 1145612677}
 --- !u!135 &584452244
@@ -1632,7 +1633,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 7
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &585880621
 PrefabInstance:
@@ -2567,11 +2568,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822663044}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9e77aee87d96e747b8f7f4a1a7173ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 1145612676}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -3919,10 +3921,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 584452242}
+  - {fileID: 822663045}
   - {fileID: 5916590904499229511}
   - {fileID: 904139129}
   - {fileID: 1605692555}
-  - {fileID: 822663045}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1145612676

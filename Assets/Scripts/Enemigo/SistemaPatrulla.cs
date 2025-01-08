@@ -17,7 +17,8 @@ public class SistemaPatrulla : MonoBehaviour
     private int indiceRutaActual = -1; //Marca el indice del nuevo punto al cual patrullar
     private void Awake()
     {
-        
+        //Comunico al main que el sistema de patrulla soy yo.
+        main.Patrulla = this;
         // Voy recorriendo todos los puntos que tiene mi ruta...
         foreach (Transform punto in ruta) // el foreach aparte de para arrays sirve para los hijos que tenga un objeto
         {
@@ -29,8 +30,6 @@ public class SistemaPatrulla : MonoBehaviour
     }
     void Start()
     {
-        //Comunico al main que el sistema de patrulla soy yo.
-        main.Patrulla = this;
         StartCoroutine(PatrullarYEsperar());
     }
 
