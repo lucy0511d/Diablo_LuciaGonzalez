@@ -22,6 +22,7 @@ public class SistemaCombate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        agent.speed = velocidadCombate;
         //3.Marca como destino constantemente (Update()) al target (Definido en main)
         agent.SetDestination(main.MainTarget.position);
     }
