@@ -9,16 +9,21 @@ public class Enemigo : MonoBehaviour
     private SistemaCombate combate;
     private SistemaPatrulla patrulla;
 
+    private Transform mainTarget;
     public SistemaCombate Combate { get => combate; set => combate = value; }
     public SistemaPatrulla Patrulla { get => patrulla; set => patrulla = value; }
+    public Transform MainTarget { get => mainTarget; }
+
     private void Start()
     {
         //Empieza el juego y activamos la patrulla
         patrulla.enabled = true;
     }
-    public void ActivaCombate()
+    public void ActivaCombate(Transform target)
     {
-        //Nos dicen que activemos el combate
+        //Ahora tenemos un target al cual perseguir
+        mainTarget = target;
+        //Nos dicen de activar el combate
         combate.enabled = true;
     }
 }

@@ -61,9 +61,8 @@ public class SistemaPatrulla : MonoBehaviour
         //!. Mirar a ver si lo que entra en mi triogger es el player  si es asi parar todas las corrutinas. desactivar este script. activar script combate
         if (other.CompareTag("Player")) //Si lo que se ha metido en el trigger es el gameobject con el tag "Player"
         {
-            
+            main.ActivaCombate(other.transform);
             StopAllCoroutines();//Paro Corrutinas
-            main.ActivaCombate();
             this.enabled = false;//Deshabilito patrulla
         }
     }

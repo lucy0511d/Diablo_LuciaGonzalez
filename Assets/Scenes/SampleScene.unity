@@ -2574,6 +2574,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 1145612676}
+  velocidadCombate: 5
+  agent: {fileID: 1145612677}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
