@@ -8,7 +8,7 @@ public class Enemigo : MonoBehaviour
 {
     private SistemaCombate combate;
     private SistemaPatrulla patrulla;
-
+    
     private Transform mainTarget;
     public SistemaCombate Combate { get => combate; set => combate = value; }
     public SistemaPatrulla Patrulla { get => patrulla; set => patrulla = value; }
