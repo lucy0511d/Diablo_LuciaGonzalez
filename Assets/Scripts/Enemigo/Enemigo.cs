@@ -26,4 +26,10 @@ public class Enemigo : MonoBehaviour
         //Nos dicen de activar el combate
         combate.enabled = true;
     }
+
+    public void ActivarPatrulla()
+    {
+        combate.enabled = false;
+        patrulla.enabled = true;
+    }
 }

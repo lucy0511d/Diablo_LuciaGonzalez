@@ -29,8 +29,16 @@ public class SistemaCombate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        //3.Marca como destino constantemente (Update()) al target (Definido en main)
-        agent.SetDestination(main.MainTarget.position);
+        // si existe un  maintarget y ese target es alcanzable...
+        if(main.MainTarget != null && agent.CalculatePath(main.MainTarget.position, new NavMeshPath())) //calculatepath: mira si hay o no camino hacia el jugador (calcula este recorrido a traves de este path)
+        {
+            //3.Marca como destino constantemente (Update()) al target (Definido en main)
+            agent.SetDestination(main.MainTarget.position);
+
+        }
+        else //Si no es alcanzable
+        {
+            main.ActivarPatrulla();
+        }
     }
 }
