@@ -42,7 +42,7 @@ public class SistemaDeDialogos : MonoBehaviour
     {
         npcCamera.SetPositionAndRotation(cameraPoint.position, cameraPoint.rotation); // Para cambiarle a la camera la posicion y rotacion sin necesidad de dos lineas de codigo
         Time.timeScale = 0f; //Pausamos el juegaso.
-        //El dialgo actual con el que trabajamos es el que me dan por parámetro de entrada.
+        //El dialogo actual con el que trabajamos es el que me dan por parámetro de entrada.
         dialogoActual = dialogo;
         marcos.SetActive(true);
         StartCoroutine(EscribirFrase());
