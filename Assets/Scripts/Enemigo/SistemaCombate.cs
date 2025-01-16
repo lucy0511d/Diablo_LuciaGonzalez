@@ -9,6 +9,7 @@ public class SistemaCombate : MonoBehaviour
     [SerializeField] private Enemigo main;
     [SerializeField] private float velocidadCombate;
     [SerializeField] private float distanciaAtaque;
+    [SerializeField] private float danhoAtaque;
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Animator anim;
    
@@ -37,7 +38,7 @@ public class SistemaCombate : MonoBehaviour
             //3.Marca como destino constantemente (Update()) al target (Definido en main)
             EnfocarObjetivo();
             agent.SetDestination(main.MainTarget.position);
-            if (agent.remainingDistance <= distanciaAtaque)
+            if (!agent.pathPending && agent.remainingDistance <= distanciaAtaque)
             {
                 anim.SetBool("attacking", true);
             }
@@ -48,7 +49,6 @@ public class SistemaCombate : MonoBehaviour
             main.ActivarPatrulla();
         }
     }
-
     private void EnfocarObjetivo()
     {
         Vector3 direccionATarget = (main.MainTarget.position - this.transform.position).normalized;
@@ -59,4 +59,17 @@ public class SistemaCombate : MonoBehaviour
     //1. hacer un evento de animacion en el momento en el que el enemigo ataca
     //2. Hacer script EnemyVisual y añadirlo a enemyvisual
     //3. En ese script añasr
+
+    #region Ejecutados por eventos de animacion
+    private void Atacar()
+    {
+        //Hacer daño al player
+        main.MainTarget.GetComponent<Player>().HacerDanho(danhoAtaque);
+    }
+    private void FinAnimacionAtaque()
+    {
+        anim.SetBool("attacking", false);
+    }
+    #endregion
+    
 }

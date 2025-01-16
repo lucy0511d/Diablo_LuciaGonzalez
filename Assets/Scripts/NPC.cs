@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPC : MonoBehaviour
+public class NPC : MonoBehaviour, IInteractuable
 {
     private Outline outline;
     [SerializeField] private DialogoSO dialogo;
@@ -16,7 +16,7 @@ public class NPC : MonoBehaviour
     {
         outline = GetComponent<Outline>();
     }
-    public void Interactuar (Transform interactuador)
+    public void Interactuar(Transform interactuador)
     {
         transform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y).OnComplete(()=> SistemaDeDialogos.sistema.IniciarDialogo(dialogo, cameraPoint)); //OnComplete -> pones dentro lo que quieres hacer
 
@@ -32,6 +32,10 @@ public class NPC : MonoBehaviour
     {
         Cursor.SetCursor(cursorPorDefecto, Vector2.zero, CursorMode.Auto);
         outline.enabled = false;
+    }
+    private void IniciarDialogo()
+    {
+        //SistemaDeDialogos.sD.IniciarDialogo(dialogo, puntoCamara);
     }
 }
 

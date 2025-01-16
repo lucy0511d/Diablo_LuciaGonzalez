@@ -36,6 +36,7 @@ public class SistemaPatrulla : MonoBehaviour
     private void OnEnable()
     {
         indiceRutaActual = -1;// empiezo la ruta desde el comienzo
+        agent.stoppingDistance = 0;
         agent.speed = velocidadPatrulla; //vuelvo a la velocidad de patrulla
         StartCoroutine(PatrullarYEsperar());
     }
