@@ -5828,7 +5828,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanciaInteraccion: 2
+  attackingDistance: 2
   tiempoRotacion: 2
+  anim: {fileID: 0}
 --- !u!54 &1629697684
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9669,6 +9671,7 @@ GameObject:
   - component: {fileID: 3124860882045702816}
   - component: {fileID: 3124860882045702818}
   - component: {fileID: 3124860882045702817}
+  - component: {fileID: 3124860882045702819}
   m_Layer: 3
   m_Name: Player_Visual
   m_TagString: Untagged
@@ -10448,6 +10451,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3124860882045702819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2312155060192757786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cada260eafcebcd48a58cd073f7efa34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main: {fileID: 0}
 --- !u!1 &3125851748478891792
 GameObject:
   m_ObjectHideFlags: 0
