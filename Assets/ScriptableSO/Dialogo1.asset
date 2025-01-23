@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e32c5a93652acb4ca80775d14b8c315, type: 3}
+  m_Name: Dialogo1
+  m_EditorClassIdentifier: 
+  frases:
+  - "Hola aventurero, mi abuelita est\xE1 enferma y s\xF3lo se puede curar con una
+    medicina infernal.."
+  - "Para poder cocinar la medicina, necesito conseguir 3 setas de la muerte..\xBFMe
+    las podr\xEDas conseguir, por favor?"
+  tiempoentreletras: 0.01
+  tieneMision: 1
+  textoMision: Consigue setas de la muerte (0/3)

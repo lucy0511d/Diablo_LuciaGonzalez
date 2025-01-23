@@ -8,8 +8,9 @@ public class SistemaDeDialogos : MonoBehaviour
     //Patrón SINGLETON
     //Asegurarte de que esta sea la UNICA INSTANCIA de "SistemaDeDialogo"
     //Asegura que esa instancia SEA ACCESIBLE desde cualquier punto del programa
-
     //
+    [SerializeField] private EventManagerSO eventManager;
+   
     public static SistemaDeDialogos sistema;
     [SerializeField] private GameObject marcos;
     [SerializeField] private TMP_Text textoDialogo;
@@ -93,12 +94,17 @@ public class SistemaDeDialogos : MonoBehaviour
     }
     private void TerminarDialogo()
     {
+        Time.timeScale = 1f;// Volvemos al tiempo original.
         marcos.SetActive(false);
         StopAllCoroutines();
         indiceFraseActual = 0; //Para posteriores dialogos.
         escribiendo = false;
+        if(dialogoActual.tieneMision)
+        {
+            eventManager.NuevaMision();
+        }
         dialogoActual = null; // Ya no tenemos ningun dialogo 
-        Time.timeScale = 1f;// Volvemos al tiempo original.
+       
     }
     
 }
