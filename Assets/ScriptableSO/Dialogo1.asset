@@ -17,6 +17,6 @@ MonoBehaviour:
     medicina infernal.."
   - "Para poder cocinar la medicina, necesito conseguir 3 setas de la muerte..\xBFMe
     las podr\xEDas conseguir, por favor?"
-  tiempoentreletras: 0.01
+  tiempoEntreLetras: 0
   tieneMision: 1
-  textoMision: Consigue setas de la muerte (0/3)
+  mision: {fileID: 11400000, guid: c6e10d84c83227748abf6cadfbccc29f, type: 2}
