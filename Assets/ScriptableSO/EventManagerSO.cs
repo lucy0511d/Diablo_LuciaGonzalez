@@ -7,7 +7,7 @@ using UnityEngine;
 public class EventManagerSO : ScriptableObject
 {   // Start is called before the first frame update
     public event Action OnNuevaMision;//EVENTO
-    public void NuevaMision()
+    public void NuevaMision(MisionSO mision)
     {
         //Aquí lanzo la notificación (el evento) por si a alguien le interesa
         OnNuevaMision.Invoke();

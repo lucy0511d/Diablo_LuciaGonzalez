@@ -8,7 +8,7 @@ public class SistemaMisiones : MonoBehaviour
     [SerializeField] private GameObject toggleMision;
     private void OnEnable()
     {
-        eventManager.OnNuevaMision += ActivarToggleMision;
+        eventManager.OnNuevaMision += ActivarToggleMision;//te suscribes
 
     }
 

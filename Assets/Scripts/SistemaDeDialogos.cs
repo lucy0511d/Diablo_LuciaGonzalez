@@ -101,7 +101,8 @@ public class SistemaDeDialogos : MonoBehaviour
         escribiendo = false;
         if(dialogoActual.tieneMision)
         {
-            eventManager.NuevaMision();
+            //Comunico al eventManager que hay una mision en este dialogo 
+            eventManager.NuevaMision(dialogoActual.mision);
         }
         dialogoActual = null; // Ya no tenemos ningun dialogo 
        
