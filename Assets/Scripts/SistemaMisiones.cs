@@ -12,7 +12,7 @@ public class SistemaMisiones : MonoBehaviour
 
     }
 
-    private void ActivarToggleMision()
+    private void ActivarToggleMision(MisionSO mision)
     {
         toggleMision.SetActive(true);
     }

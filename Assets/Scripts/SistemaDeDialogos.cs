@@ -58,7 +58,7 @@ public class SistemaDeDialogos : MonoBehaviour
         foreach (char letra in fraseEnLetras)
         {
             textoDialogo.text += letra;
-            yield return new WaitForSecondsRealtime(dialogoActual.tiempoentreletras);
+            yield return new WaitForSecondsRealtime(dialogoActual.tiempoEntreLetras);
 
         }
         escribiendo = false;
