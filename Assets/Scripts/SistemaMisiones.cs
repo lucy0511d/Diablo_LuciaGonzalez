@@ -10,8 +10,11 @@ public class SistemaMisiones : MonoBehaviour
     private void OnEnable()
     {
         eventManager.OnNuevaMision += ActivarToggleMision;//te suscribes
-
+        eventManager.OnActualizarMision += ActualizarToggle;
+        eventManager.OnTerminarMision += CerrarToggle;
     }
+
+  
 
     private void ActivarToggleMision(MisionSO mision)
     {
@@ -21,5 +24,15 @@ public class SistemaMisiones : MonoBehaviour
             toggleMision[mision.indiceMision].TextoMision.text += "(" + mision.estadoActual + "/" + mision.repeticionesTotales + ")";
         }
         toggleMision[mision.indiceMision].gameObject.SetActive(true);
+    }
+    private void ActualizarToggle(MisionSO mision)
+    {
+
+    }
+    private void CerrarToggle(MisionSO mision)
+    {
+        //marcar el toggle como true
+        toggleMision[mision.indiceMision].Toggle.isOn = true;
+        toggleMision[mision.indiceMision].TextoMision.text = mision.ordenFinal;
     }
 }
