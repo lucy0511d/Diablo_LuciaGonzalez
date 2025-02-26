@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Seta : MonoBehaviour, IInteractuable
 {
@@ -19,6 +21,7 @@ public class Seta : MonoBehaviour, IInteractuable
         else
         {
             eventManager.TerminarMision(misionAsociada);
+            SceneManager.LoadScene(2);
         }
         eventManager.ActualizarMision(misionAsociada);
         Destroy(gameObject);
