@@ -16,6 +16,6 @@ public class Billboard : MonoBehaviour
     {
         //Para que la barra pueda mirar a camara (s
         //olo funciona con camara ortográfica)
-        transform.forward = -cam.transform.forward;
+        transform.forward=-cam.transform.forward;
     }
 }

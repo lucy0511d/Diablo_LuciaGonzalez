@@ -41,9 +41,9 @@ public class NPC : MonoBehaviour, IInteractuable
 
     public void Interactuar(Transform interactuador)
     {
-        transform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y).OnComplete(()=> SistemaDeDialogos.sistema.IniciarDialogo(dialogoActual, cameraPoint)); //OnComplete -> pones dentro lo que quieres hacer
+        transform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y).OnComplete(()=> SistemaDeDialogos.sistema.IniciarDialogo(dialogoActual, cameraPoint));
 
-        
+        //OnComplete -> pones dentro lo que quieres hacer
     }
 
     private void OnMouseEnter()

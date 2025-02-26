@@ -26,7 +26,7 @@ public class SistemaDeDialogos : MonoBehaviour
     private void Awake()
     {
         // si el trono esta vacio...
-        if (sistema = null)
+        if (sistema == null)
         {
             //Reclamo el trono y me lo quedo
             sistema = this;
@@ -36,7 +36,7 @@ public class SistemaDeDialogos : MonoBehaviour
         else
         {
             // solo puede haber un rey
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
     public void IniciarDialogo(DialogoSO dialogo, Transform cameraPoint)
@@ -44,7 +44,8 @@ public class SistemaDeDialogos : MonoBehaviour
         npcCamera.SetPositionAndRotation(cameraPoint.position, cameraPoint.rotation); // Para cambiarle a la camera la posicion y rotacion sin necesidad de dos lineas de codigo
         Time.timeScale = 0f; //Pausamos el juegaso.
         //El dialogo actual con el que trabajamos es el que me dan por parámetro de entrada.
-        dialogoActual = dialogo;
+        this.dialogoActual = dialogo;
+        Debug.Log("LLego");
         marcos.SetActive(true);
         StartCoroutine(EscribirFrase());
     }
