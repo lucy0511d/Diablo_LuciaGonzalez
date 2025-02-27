@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Dialogo1
   m_EditorClassIdentifier: 
   frases:
-  - "Hola aventurero, mi abuelita est\xE1 enferma y s\xF3lo se puede curar con una
-    medicina infernal.."
+  - Hola aventurero, mi abuelita esta enferma y solo se puede curar con una medicina
+    infernal..
   - "Para poder cocinar la medicina, necesito conseguir 3 setas de la muerte..\xBFMe
-    las podr\xEDas conseguir, por favor?"
+    las podrias conseguir, por favor?"
   tiempoEntreLetras: 0
   tieneMision: 1
   mision: {fileID: 11400000, guid: c6e10d84c83227748abf6cadfbccc29f, type: 2}
